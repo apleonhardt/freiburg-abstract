@@ -1,0 +1,1 @@
+First draft of "client-side" abstract for BCCN Conference 2011. Feel free to comment, edit, fork.
