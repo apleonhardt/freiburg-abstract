@@ -12,8 +12,7 @@
 
 \begin{document}
 
-\title{From the workbench: Tools for interacting with structured
-  neurophysiological data in the G-Node storage system}
+\title{Advanced Tools and Techniques for Interacting with Neurophysiological Data}
 
 \author{
 
@@ -37,66 +36,49 @@ associated meta-information constitutes one of the most pressing
 challenges in modern neuroscience, and does so particularly in
 electrophysiology. The German INCF node aims to provide a full-stack
 solution for this specific domain, consisting of two layers. First, we
-offer server-side infrastructure that holds data in an object model
-tailored to field-relevant demands and exposes these entities through
-a convenient HTTP-based interface. Second, we make available a
-collection of client-side tools which facilitate data consumption and
-enable native integration into various popular analysis environments
-such as MATLAB, Python and R. Existing workflow and code are leveraged
-whenever possible: By transparently managing the transition from
+offer server-side infrastructure that holds gathered data in an object
+model tailored to field-relevant demands and exposes these entities
+through a convenient HTTP-based RESTful interface. Second, we make a
+collection of client-side tools available which facilitate data
+consumption and enable native integration into various popular
+analysis environments. Existing workflow and code are leveraged
+wherever possible: By transparently managing the transition from
 G-Node object format to native data structures and vice versa, our
 client libraries allow scientists to benefit from a powerful, semantic
-storage system without having to drastically alter established
-processes.
-
-The object model, derived from Python's NEO, comprises a carefully
-designed set of abstractions that captures relevant components of
-electrophysiological recordings, ranging from high-level containers
-(e.g., blocks or segments) down to fine-grained elements (e.g.,
-spikes, waveforms or raw signal data). Supported by the mark-up
-language odML, this model represents a comprehensive approach to
-describing electrophysiological data and attached meta-data. In order
-to maximize client compatibility, access to these objects is mediated
-primarily by a concise, RESTful API which transmits data via HTTP and
-in form of human-readable, light-weight JSON objects. Any programming
-and analysis suite capable of performing simple HTTP requests
-therefore gains the ability to consume, modify, and create data
-maintained in the G-Node storage system. Binary or proprietary bridges
-become unnecessary.
+storage system without having to alter established processes
+drastically.
 
 Given the variety of analysis environments in use, we acknowledge that
 a sensible storage solution needs to integrate with existing tool
 chains, and must do so seamlessly. To this end, G-Node puts forward a
 set of client libraries for Python, JVM languages (e.g., Java),
-MATLAB, and R which make stored recordings readily accessible by
-hiding virtually all intermediate operations (e.g., HTTP transfer,
-JSON parsing, and caching). Key aim is a natural user experience that
+MATLAB, and R that hide virtually all intermediate operations (e.g.,
+HTTP transfer, JSON parsing, and caching) and thereby render stored
+recordings readily accessible. Key aim is natural user experience that
 adheres to each language's idiosyncrasies by converting G-Node objects
 into idiomatic and computationally efficient local representations.
 
 Our MATLAB toolbox, for instance, exploits the runtime's heavily
 optimised array and matrix handling when rendering objects. Specific
 entities are transferred into the workspace by means of a single
-command, and behave akin to standard structures. This allows painless
+command, and behave like standard structures. This allows painless
 interfacing with existing tools for plotting and analysis while
 retaining critical information about experimental logic. Moreover,
 scientists with extensive experience in MATLAB become productive right
 away. Bindings to R, on the other hand, present requested data as
 suitably laid out data frames, again emphasising clean integration
-into standard patterns of the respective language. Transformations of
-this kind are bidirectional: our client libraries facilitate tagging
-and storing of existing recordings, and support effortless re-upload
-of modified objects. A powerful side-effect of this unified data store
-is enhanced inter-operability---recordings and their structure are
-easily shared between analysis environments and laboratories. In
+into standard patterns of the respective language. Such
+transformations are bidirectional: our client libraries facilitate
+tagging and storing of existing recordings, and support effortless
+re-upload of modified objects. Recordings and their structure are
+therefore easily shared between analysis tools and laboratories. In
 addition, we are currently developing browser-based visualisation
 tools aiding scientists during exploratory data analysis.
 
 Crucially, the extent to which advanced features of the object model
-are used is determined by the individual scientist; each library's
-design emphasises the importance of gradual integration. Thus, by
-providing unobtrusive yet fully-featured access, our client utilities
-bring the advantages of the G-Node data management system closer to
-the electrophysiologist's workbench.
+are used is determined by the individual scientist. Thus, by providing
+unobtrusive yet fully-featured access, our client utilities bring
+advantages of the G-Node data management system closer to the
+neurophysiologist's workbench.
 
 \end{document}
